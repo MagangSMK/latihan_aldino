@@ -1,16 +1,16 @@
 <?php
-include_once("config/config.php");
+include_once("../../config/config.php");
 ?>
 <html>
 <head>
-	<title>Add Users</title>
+	<title>Add Data</title>
 </head>
  
 <body>
-	<a href="index.php">Go to Home</a>
+	<a href="../../index.php">Go to Home</a>
 	<br/><br/>
  
-	<form action="add.php" method="post" name="form1">
+	<form action="add.php" method="post" name="form2">
 		<table width="25%" border="0">
 			<tr> 
 				<td>idpeminjam</td>
@@ -58,10 +58,10 @@ include_once("config/config.php");
 		include_once("../../config/config.php");
 				
 		// Insert user data into table
-		$result = mysqli_query($mysqli, "INSERT INTO users(idpeminjam,nama,jurusan,semester,angkatan,jumlah) VALUES('$idpeminjam','$nama','$jurusan','$angkatan','$jumlah')");
+		$result1 = mysqli_query($mysqli, "INSERT INTO peminjam(idpeminjam,nama,jurusan,semester,angkatan,jumlah) VALUES('$idpeminjam','$nama','$jurusan','$semester','$angkatan','$jumlah')");
 		
 		// Show message when user added
-		echo "User added successfully. <a href='index.php'>View Users</a>";
+		echo "data added successfully. <a href='../../index.php'>View Users</a>";
 	}
 	?>
 </body>

@@ -3,14 +3,14 @@ include_once("../../config/config.php");
 ?>
 <html>
 <head>
-	<title>Add Users</title>
+	<title>Add transaksi</title>
 </head>
  
 <body>
 	<a href="../../index.php">Go to Home</a>
 	<br/><br/>
  
-	<form action="add.php" method="post" name="form1">
+	<form action="add.php" method="post" name="form3">
 		<table width="25%" border="0">
 			<tr> 
 				<td>idtransaksi</td>
@@ -47,18 +47,21 @@ include_once("../../config/config.php");
  
 	// Check If form submitted, insert form data into users table.
 	if(isset($_POST['Submit'])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$mobile = $_POST['mobile'];
+		$idtransaksi = $_POST['idtransaksi'];
+		$idpeminjam = $_POST['idpeminjam'];
+		$nama = $_POST['nama'];
+		$idbuku = $_POST['idbuku'];
+		$namabuku = $_POST['namabuku'];
+		$jumlahbuku = $_POST['jumlahbuku'];
 		
 		// include database connection file
-		include_once("config.php");
+		include_once("../../config/config.php");
 				
 		// Insert user data into table
-		$result = mysqli_query($mysqli, "INSERT INTO users(name,email,mobile) VALUES('$name','$email','$mobile')");
+		$result2 = mysqli_query($mysqli, "INSERT INTO transaksi(idtransaksi,idpeminjam,nama,idbuku,namabuku,jumlahbuku) VALUES('$idtransaksi','$idpeminjam','$nama','$idbuku','$namabuku','$jumlahbuku')");
 		
 		// Show message when user added
-		echo "User added successfully. <a href='index.php'>View Users</a>";
+		echo "transaksi added successfully. <a href='../../index.php'>View Users</a>";
 	}
 	?>
 </body>

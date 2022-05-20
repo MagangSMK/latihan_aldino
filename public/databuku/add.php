@@ -8,7 +8,7 @@ include_once("../../config/config.php");
  
 <body>
 	<a href="../../index.php">Go to Home</a>
-	<br/><br/>
+	<br><br>
  
 	<form action="add.php" method="post" name="form1">
 		<table width="25%" border="0">
@@ -60,7 +60,7 @@ include_once("../../config/config.php");
 		$result = mysqli_query($mysqli, "INSERT INTO databuku(idbuku,namabuku,pengarang,penerbit,jumlah,tahunterbit) VALUES('$idbuku','$namabuku','$pengarang','$penerbit','$jumlah','$tahunterbit')");
 		
 		// Show message when user added
-		echo "User added successfully. <a href='../../index.php'>View Users</a>";
+		echo "data added successfully. <a href='../../index.php'>View Users</a>";
 	}
 	?>
 </body>
